@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project/home.dart';
 import 'dart:async';
 import 'package:project/layout.dart';
+import 'package:project/onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Timer(duration, () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Home()),
+        MaterialPageRoute(builder: (context) => OnBoarding()),
       );
     });
   }
