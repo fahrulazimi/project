@@ -14,7 +14,17 @@ class _OnBoardingState extends State<OnBoarding> {
       body: IntroductionScreen(
         pages: [
           PageViewModel(
-              title: "Konsep Baru",
+              titleWidget: Center(
+                child: Text(
+                  "Konsep Baru",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontFamily: "NuninoSans",
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xffC43D39)),
+                ),
+              ),
               bodyWidget: Center(
                 child: Expanded(
                   child: Text(
@@ -29,7 +39,17 @@ class _OnBoardingState extends State<OnBoarding> {
               ),
               image: Image.asset("assets/images/intro1.png")),
           PageViewModel(
-              title: "Kelola Data Order",
+              titleWidget: Center(
+                child: Text(
+                  "Kelola Data Order",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontFamily: "NuninoSans",
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xffC43D39)),
+                ),
+              ),
               bodyWidget: Center(
                 child: Expanded(
                   child: Text(
@@ -44,7 +64,17 @@ class _OnBoardingState extends State<OnBoarding> {
               ),
               image: Image.asset("assets/images/intro2.png")),
           PageViewModel(
-              title: "Manajemen Sales Force",
+              titleWidget: Center(
+                child: Text(
+                  "Manajemen Sales Force",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontFamily: "NuninoSans",
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xffC43D39)),
+                ),
+              ),
               bodyWidget: Center(
                 child: Expanded(
                   child: Text(
@@ -86,7 +116,7 @@ class _OnBoardingState extends State<OnBoarding> {
               "LEWATI",
               style: TextStyle(
                   fontFamily: "NuninoSans",
-                  fontSize: 14,
+                  fontSize: 11,
                   color: Color(0xffC43D39)),
             ),
           ),
@@ -102,7 +132,7 @@ class _OnBoardingState extends State<OnBoarding> {
             child: Text(
               "SELANJUTNYA",
               style: TextStyle(
-                  fontFamily: "NuninoSans", fontSize: 13, color: Colors.white),
+                  fontFamily: "NuninoSans", fontSize: 11, color: Colors.white),
             ),
           ),
         ),
@@ -122,7 +152,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   "MULAI",
                   style: TextStyle(
                       fontFamily: "NuninoSans",
-                      fontSize: 14,
+                      fontSize: 11,
                       color: Colors.white),
                 ),
               ),
