@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:project/home.dart';
+import 'package:project/login_page.dart';
 
 class OnBoarding extends StatefulWidget {
   @override
@@ -91,7 +91,7 @@ class _OnBoardingState extends State<OnBoarding> {
         ],
         onDone: () {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => Home()));
+              context, MaterialPageRoute(builder: (context) => LoginPage()));
         },
         showSkipButton: true,
         showNextButton: true,

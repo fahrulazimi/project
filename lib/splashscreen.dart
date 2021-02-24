@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project/home.dart';
 import 'dart:async';
 import 'package:project/layout.dart';
 import 'package:project/onboarding.dart';
