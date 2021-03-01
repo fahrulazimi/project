@@ -19,7 +19,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   "Konsep Baru",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontFamily: "NuninoSans",
+                      fontFamily: "NunitoSans",
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: Color(0xffC43D39)),
@@ -31,7 +31,7 @@ class _OnBoardingState extends State<OnBoarding> {
                     "Berjualan jadi lebih mudah dengan tampilan baru aplikasi.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: "NuninoSans",
+                      fontFamily: "NunitoSans",
                       fontSize: 14,
                     ),
                   ),
@@ -44,7 +44,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   "Kelola Data Order",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontFamily: "NuninoSans",
+                      fontFamily: "NunitoSans",
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: Color(0xffC43D39)),
@@ -56,7 +56,7 @@ class _OnBoardingState extends State<OnBoarding> {
                     "Memudahkan sales dalam mengelola data order pelanggan dengan baik.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: "NuninoSans",
+                      fontFamily: "NunitoSans",
                       fontSize: 14,
                     ),
                   ),
@@ -69,7 +69,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   "Manajemen Sales Force",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontFamily: "NuninoSans",
+                      fontFamily: "NunitoSans",
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: Color(0xffC43D39)),
@@ -81,7 +81,7 @@ class _OnBoardingState extends State<OnBoarding> {
                     "Membantu sales dalam bekerja dengan berbagai fitur yang tersedia.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: "NuninoSans",
+                      fontFamily: "NunitoSans",
                       fontSize: 14,
                     ),
                   ),
@@ -115,7 +115,7 @@ class _OnBoardingState extends State<OnBoarding> {
             child: Text(
               "LEWATI",
               style: TextStyle(
-                  fontFamily: "NuninoSans",
+                  fontFamily: "NunitoSans",
                   fontSize: 11,
                   color: Color(0xffC43D39)),
             ),
@@ -132,7 +132,7 @@ class _OnBoardingState extends State<OnBoarding> {
             child: Text(
               "SELANJUTNYA",
               style: TextStyle(
-                  fontFamily: "NuninoSans", fontSize: 11, color: Colors.white),
+                  fontFamily: "NunitoSans", fontSize: 11, color: Colors.white),
             ),
           ),
         ),
@@ -151,7 +151,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 child: Text(
                   "MULAI",
                   style: TextStyle(
-                      fontFamily: "NuninoSans",
+                      fontFamily: "NunitoSans",
                       fontSize: 11,
                       color: Colors.white),
                 ),

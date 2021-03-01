@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/home.dart';
 import 'package:project/layout.dart';
+import 'package:project/dialog.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -39,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                   Text(
                     "Selamat Datang",
                     style: TextStyle(
-                        fontFamily: "NuninoSans",
+                        fontFamily: "NunitoSans",
                         fontSize: 18,
                         fontWeight: FontWeight.w700),
                   ),
@@ -48,13 +49,15 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Text(
                     "Silahkan login terlebih dahulu",
-                    style: TextStyle(fontFamily: "NuninoSans", fontSize: 14),
+                    style: TextStyle(fontFamily: "NunitoSans", fontSize: 14),
                   ),
                   Image.asset(
                     "assets/images/intro4.png",
                     width: SizeConfig.blockHorizontal * 100,
                     height: SizeConfig.blockVertical * 30,
                   ),
+
+                  // Form Username Password
                   Form(
                       key: formKey,
                       onChanged: () => setState(
@@ -62,10 +65,11 @@ class _LoginPageState extends State<LoginPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
+                          // Username
                           Text(
                             "Username",
                             style: TextStyle(
-                                fontFamily: "NuninoSans",
+                                fontFamily: "NunitoSans",
                                 fontSize: 14,
                                 fontWeight: FontWeight.w700),
                           ),
@@ -81,15 +85,17 @@ class _LoginPageState extends State<LoginPage> {
                                   border: InputBorder.none,
                                   hintText: "Masukkan Username",
                                   hintStyle: TextStyle(
-                                      fontFamily: "NuninoSans",
+                                      fontFamily: "NunitoSans",
                                       fontSize: 14,
                                       color: Colors.grey[400])),
                             ),
                           ),
+
+                          // Password
                           Text(
                             "Password",
                             style: TextStyle(
-                                fontFamily: "NuninoSans",
+                                fontFamily: "NunitoSans",
                                 fontSize: 14,
                                 fontWeight: FontWeight.w700),
                           ),
@@ -106,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                                   border: InputBorder.none,
                                   hintText: "Masukkan Password",
                                   hintStyle: TextStyle(
-                                      fontFamily: "NuninoSans",
+                                      fontFamily: "NunitoSans",
                                       fontSize: 14,
                                       color: Colors.grey[400]),
                                   suffixIcon: IconButton(
@@ -126,12 +132,14 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ],
                       )),
+
+                  // Butuh Bantuan
                   Container(
                     child: Center(
                       child: Text(
                         "Butuh bantuan?",
                         style: TextStyle(
-                            fontFamily: "NuninoSans",
+                            fontFamily: "NunitoSans",
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
                             color: Colors.red),
@@ -141,6 +149,8 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 35,
                   ),
+
+                  // Button Login
                   GestureDetector(
                       child: Container(
                         height: 50,
@@ -157,15 +167,23 @@ class _LoginPageState extends State<LoginPage> {
                             child: Text(
                           "LOGIN",
                           style: TextStyle(
-                              fontFamily: "NuninoSans",
+                              fontFamily: "NunitoSans",
                               fontSize: 14,
                               color: Colors.white),
                         )),
                       ),
                       onTap: () {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => Home()));
-                      })
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return OnErrorDialog();
+                            });
+                      }
+                      // onTap: () {
+                      //   Navigator.pushReplacement(context,
+                      //       MaterialPageRoute(builder: (context) => Home()));
+                      // }
+                      )
                 ],
               ),
             ],
