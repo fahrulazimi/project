@@ -134,17 +134,20 @@ class _LoginPageState extends State<LoginPage> {
                       )),
 
                   // Butuh Bantuan
-                  Container(
-                    child: Center(
-                      child: Text(
-                        "Butuh bantuan?",
-                        style: TextStyle(
-                            fontFamily: "NunitoSans",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.red),
+                  GestureDetector(
+                    child: Container(
+                      child: Center(
+                        child: Text(
+                          "Butuh bantuan?",
+                          style: TextStyle(
+                              fontFamily: "NunitoSans",
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.red),
+                        ),
                       ),
                     ),
+                    onTap: () => _onButtonHelp(),
                   ),
                   SizedBox(
                     height: 35,
@@ -191,5 +194,119 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void _onButtonHelp() {
+    showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+        ),
+        context: context,
+        builder: (context) {
+          return Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Center(
+                  child: Container(
+                    width: 100,
+                    height: 5,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.grey),
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Text(
+                  "Apa kendala kamu saat ini?",
+                  style: TextStyle(
+                      fontFamily: "NunitoSans",
+                      fontSize: 15,
+                      color: Colors.red,
+                      fontWeight: FontWeight.w700),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: Icon(Icons.accessibility_rounded),
+                    title: Text(
+                      "Lupa Password",
+                      style: TextStyle(
+                          fontFamily: "NunitoSans",
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    subtitle: Text(
+                      "Silahkan koordinasi dengan helpdesk partner melalui telegram.",
+                      style: TextStyle(fontFamily: "NunitoSans", fontSize: 12),
+                    ),
+                    trailing: Icon(Icons.arrow_forward_rounded),
+                    onTap: () {},
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: Icon(Icons.call_rounded),
+                    title: Text(
+                      "Tidak bisa Masuk",
+                      style: TextStyle(
+                          fontFamily: "NunitoSans",
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    subtitle: Text(
+                      "Silahkan koordinasi dengan helpdesk partner melalui telegram.",
+                      style: TextStyle(fontFamily: "NunitoSans", fontSize: 12),
+                    ),
+                    trailing: Icon(Icons.arrow_forward_rounded),
+                    onTap: () {},
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: Icon(Icons.call_rounded),
+                    title: Text(
+                      "Akun Suspend",
+                      style: TextStyle(
+                          fontFamily: "NunitoSans",
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    subtitle: Text(
+                      "Silahkan koordinasi dengan helpdesk partner melalui telegram.",
+                      style: TextStyle(fontFamily: "NunitoSans", fontSize: 12),
+                    ),
+                    trailing: Icon(Icons.arrow_forward_rounded),
+                    onTap: () {},
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: Text(
+                    "myIndiHome Partner 5.0.0",
+                    style: TextStyle(
+                        fontFamily: "NunitoSans",
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700),
+                  ),
+                )
+              ],
+            ),
+          );
+        });
   }
 }
