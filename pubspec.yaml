@@ -55,7 +55,7 @@ flutter:
   fonts:
     - family: NunitoSans
       fonts:
-        - asset: assets/fonts/NunitoSans-Black.ttf
+        - asset: assets/fonts/NunitoSans-Regular.ttf
 
   #   - family: Trajan Pro
   #     fonts:

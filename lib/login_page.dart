@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project/home.dart';
 import 'package:project/layout.dart';
 import 'package:project/dialog.dart';
+import 'package:project/verif_tele.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -120,13 +121,13 @@ class _LoginPageState extends State<LoginPage> {
                                         _passwordVisible
                                             ? Icons.visibility
                                             : Icons.visibility_off,
-                                        color: Colors.red),
+                                        color: Color(0xffC43D39)),
                                     onPressed: () {
                                       setState(() {
                                         _passwordVisible = !_passwordVisible;
                                       });
                                     },
-                                    color: Colors.red,
+                                    color: Color(0xffC43D39),
                                   ),
                                 )),
                           ),
@@ -143,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                               fontFamily: "NunitoSans",
                               fontSize: 14,
                               fontWeight: FontWeight.w700,
-                              color: Colors.red),
+                              color: Color(0xffC43D39)),
                         ),
                       ),
                     ),
@@ -163,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter,
                               colors: _btnEnabled
-                                  ? [Colors.red, Colors.red]
+                                  ? [Color(0xffC43D39), Color(0xffC43D39)]
                                   : [Colors.grey, Colors.grey[200]]),
                         ),
                         child: Center(
@@ -175,18 +176,19 @@ class _LoginPageState extends State<LoginPage> {
                               color: Colors.white),
                         )),
                       ),
-                      onTap: () {
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return OnErrorDialog();
-                            });
-                      }
                       // onTap: () {
-                      //   Navigator.pushReplacement(context,
-                      //       MaterialPageRoute(builder: (context) => Home()));
+                      //   showDialog(
+                      //       context: context,
+                      //       builder: (BuildContext context) {
+                      //         return OnErrorDialog();
+                      //       });
                       // }
-                      )
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => VerifTelegram()));
+                      })
                 ],
               ),
             ],
@@ -226,7 +228,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(
                       fontFamily: "NunitoSans",
                       fontSize: 15,
-                      color: Colors.red,
+                      color: Color(0xffC43D39),
                       fontWeight: FontWeight.w700),
                 ),
                 SizedBox(
