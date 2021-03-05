@@ -16,10 +16,7 @@ class OnLoadingDialog extends StatelessWidget {
             ),
             Text(
               "Mohon tunggu sebentar...",
-              style: TextStyle(
-                  fontFamily: "NunitoSans",
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
             ),
             SizedBox(
               height: 20,
@@ -48,7 +45,6 @@ class OnErrorDialog extends StatelessWidget {
             Text("Email atau password salah!",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: "NunitoSans",
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                 )),
@@ -64,7 +60,6 @@ class OnErrorDialog extends StatelessWidget {
                 child: Text(
                   "OKE, COBA LAGI",
                   style: TextStyle(
-                      fontFamily: "NunitoSans",
                       fontSize: 12,
                       color: Colors.white,
                       fontWeight: FontWeight.w900),
@@ -97,7 +92,6 @@ class OnUpdateDialog extends StatelessWidget {
                 "Terdapat Pembaharuan Aplikasi.\nSilahkan update aplikasi dibawah ini.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: "NunitoSans",
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                 )),
@@ -113,7 +107,6 @@ class OnUpdateDialog extends StatelessWidget {
                 child: Text(
                   "UPDATE APLIKASI",
                   style: TextStyle(
-                      fontFamily: "NunitoSans",
                       fontSize: 12,
                       color: Colors.white,
                       fontWeight: FontWeight.w900),
@@ -144,7 +137,6 @@ class OnConfirmDialog extends StatelessWidget {
             ),
             Text("Konfirmasi terlebih dahulu",
                 style: TextStyle(
-                  fontFamily: "NunitoSans",
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                 )),
@@ -155,7 +147,6 @@ class OnConfirmDialog extends StatelessWidget {
                 "Apakah kamu yakin keluar dari halaman verifikasi telegram? Jika keluar, maka kamu harus login ulang.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: "NunitoSans",
                   fontSize: 11,
                 )),
             SizedBox(
@@ -179,7 +170,6 @@ class OnConfirmDialog extends StatelessWidget {
                       child: Text(
                         "KEMBALI",
                         style: TextStyle(
-                            fontFamily: "NunitoSans",
                             fontSize: 12,
                             color: Color(0xffC43D39),
                             fontWeight: FontWeight.w900),
@@ -200,7 +190,6 @@ class OnConfirmDialog extends StatelessWidget {
                       child: Text(
                         "KELUAR",
                         style: TextStyle(
-                            fontFamily: "NunitoSans",
                             fontSize: 12,
                             color: Colors.white,
                             fontWeight: FontWeight.w900),
@@ -235,7 +224,6 @@ class OnErrorTeleDialog extends StatelessWidget {
             Text("Terjadi kegagalan dalam proses verifikasi telegram.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: "NunitoSans",
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                 )),
@@ -251,7 +239,6 @@ class OnErrorTeleDialog extends StatelessWidget {
                 child: Text(
                   "OKE, COBA LAGI",
                   style: TextStyle(
-                      fontFamily: "NunitoSans",
                       fontSize: 12,
                       color: Colors.white,
                       fontWeight: FontWeight.w900),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project/dialog.dart';
 import 'package:project/layout.dart';
 import 'package:project/login_page.dart';
+import 'package:project/otp_form.dart';
 
 class VerifTelegram extends StatefulWidget {
   @override
@@ -19,39 +20,28 @@ class _VerifTelegramState extends State<VerifTelegram> {
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: InkWell(
+            child: Icon(Icons.navigate_before_rounded,
+                size: 30, color: Colors.black),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginPage()));
+            }),
+        title: Text("Verifikasi Telegram",
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.w700)),
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(left: 20, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
-                height: 50,
-              ),
-              GestureDetector(
-                  child: Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Icon(
-                          Icons.navigate_before_rounded,
-                          size: 30,
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text("Verifikasi Telegram",
-                            style: TextStyle(
-                                fontFamily: "NunitoSans",
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700))
-                      ],
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
-                  }),
               Image.asset(
                 "assets/images/intro5.png",
                 width: SizeConfig.blockHorizontal * 100,
@@ -65,14 +55,11 @@ class _VerifTelegramState extends State<VerifTelegram> {
                       title: Text(
                         "Langkah Pertama",
                         style: TextStyle(
-                            fontFamily: "NunitoSans",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700),
+                            fontSize: 14, fontWeight: FontWeight.w700),
                       ),
                       subtitle: Text(
                         "Silahkan tekan tombol start yang terdapat pada bot dibawah ini.",
-                        style:
-                            TextStyle(fontFamily: "NunitoSans", fontSize: 12),
+                        style: TextStyle(fontSize: 12),
                       ),
                       trailing: Icon(Icons.arrow_forward_rounded),
                       onTap: () {},
@@ -89,9 +76,7 @@ class _VerifTelegramState extends State<VerifTelegram> {
                         child: Text(
                             "Kode OTP akan dikirimkan melalui bot tersebut.",
                             style: TextStyle(
-                                fontFamily: "NunitoSans",
-                                color: Color(0xffE86800),
-                                fontSize: 11))),
+                                color: Color(0xffE86800), fontSize: 11))),
                     SizedBox(
                       height: 10,
                     ),
@@ -106,14 +91,11 @@ class _VerifTelegramState extends State<VerifTelegram> {
                   leading: Icon(Icons.add_alert_rounded),
                   title: Text(
                     "Langkah Kedua",
-                    style: TextStyle(
-                        fontFamily: "NunitoSans",
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                   ),
                   subtitle: Text(
                     "Untuk mendapatkan informasi telegram kamu, klik bot dibawah ini.",
-                    style: TextStyle(fontFamily: "NunitoSans", fontSize: 12),
+                    style: TextStyle(fontSize: 12),
                   ),
                   isThreeLine: true,
                   trailing: Icon(Icons.arrow_forward_rounded),
@@ -132,10 +114,8 @@ class _VerifTelegramState extends State<VerifTelegram> {
                   children: <Widget>[
                     Text(
                       "ID Telegram",
-                      style: TextStyle(
-                          fontFamily: "NunitoSans",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700),
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 10),
@@ -149,17 +129,13 @@ class _VerifTelegramState extends State<VerifTelegram> {
                             border: InputBorder.none,
                             hintText: "Cth. 123456",
                             hintStyle: TextStyle(
-                                fontFamily: "NunitoSans",
-                                fontSize: 14,
-                                color: Colors.grey[400])),
+                                fontSize: 14, color: Colors.grey[400])),
                       ),
                     ),
                     Text(
                       "Username Telegram",
-                      style: TextStyle(
-                          fontFamily: "NunitoSans",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700),
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                     ),
                     Container(
                         padding: EdgeInsets.only(left: 10),
@@ -173,9 +149,7 @@ class _VerifTelegramState extends State<VerifTelegram> {
                               border: InputBorder.none,
                               hintText: "Cth. @username",
                               hintStyle: TextStyle(
-                                  fontFamily: "NunitoSans",
-                                  fontSize: 14,
-                                  color: Colors.grey[400]),
+                                  fontSize: 14, color: Colors.grey[400]),
                             ))),
                   ],
                 ),
@@ -198,18 +172,17 @@ class _VerifTelegramState extends State<VerifTelegram> {
                     child: Center(
                         child: Text(
                       "LANJUTKAN",
-                      style: TextStyle(
-                          fontFamily: "NunitoSans",
-                          fontSize: 14,
-                          color: Colors.white),
+                      style: TextStyle(fontSize: 14, color: Colors.white),
                     )),
                   ),
                   onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return OnErrorTeleDialog();
-                        });
+                    // showDialog(
+                    //     context: context,
+                    //     builder: (BuildContext context) {
+                    //       return OnErrorTeleDialog();
+                    //     });
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => OTPForm()));
                   }),
               SizedBox(
                 height: 25,

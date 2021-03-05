@@ -40,17 +40,14 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Text(
                     "Selamat Datang",
-                    style: TextStyle(
-                        fontFamily: "NunitoSans",
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Silahkan login terlebih dahulu",
-                    style: TextStyle(fontFamily: "NunitoSans", fontSize: 14),
+                    style: TextStyle(fontSize: 14),
                   ),
                   Image.asset(
                     "assets/images/intro4.png",
@@ -70,9 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                           Text(
                             "Username",
                             style: TextStyle(
-                                fontFamily: "NunitoSans",
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700),
+                                fontSize: 14, fontWeight: FontWeight.w700),
                           ),
                           Container(
                             padding: EdgeInsets.only(left: 10),
@@ -86,9 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                                   border: InputBorder.none,
                                   hintText: "Masukkan Username",
                                   hintStyle: TextStyle(
-                                      fontFamily: "NunitoSans",
-                                      fontSize: 14,
-                                      color: Colors.grey[400])),
+                                      fontSize: 14, color: Colors.grey[400])),
                             ),
                           ),
 
@@ -96,9 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                           Text(
                             "Password",
                             style: TextStyle(
-                                fontFamily: "NunitoSans",
-                                fontSize: 14,
-                                fontWeight: FontWeight.w700),
+                                fontSize: 14, fontWeight: FontWeight.w700),
                           ),
                           Container(
                             padding: EdgeInsets.only(left: 10),
@@ -113,9 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                                   border: InputBorder.none,
                                   hintText: "Masukkan Password",
                                   hintStyle: TextStyle(
-                                      fontFamily: "NunitoSans",
-                                      fontSize: 14,
-                                      color: Colors.grey[400]),
+                                      fontSize: 14, color: Colors.grey[400]),
                                   suffixIcon: IconButton(
                                     icon: Icon(
                                         _passwordVisible
@@ -141,7 +130,6 @@ class _LoginPageState extends State<LoginPage> {
                         child: Text(
                           "Butuh bantuan?",
                           style: TextStyle(
-                              fontFamily: "NunitoSans",
                               fontSize: 14,
                               fontWeight: FontWeight.w700,
                               color: Color(0xffC43D39)),
@@ -170,10 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Center(
                             child: Text(
                           "LOGIN",
-                          style: TextStyle(
-                              fontFamily: "NunitoSans",
-                              fontSize: 14,
-                              color: Colors.white),
+                          style: TextStyle(fontSize: 14, color: Colors.white),
                         )),
                       ),
                       // onTap: () {
@@ -226,7 +211,6 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   "Apa kendala kamu saat ini?",
                   style: TextStyle(
-                      fontFamily: "NunitoSans",
                       fontSize: 15,
                       color: Color(0xffC43D39),
                       fontWeight: FontWeight.w700),
@@ -239,14 +223,12 @@ class _LoginPageState extends State<LoginPage> {
                     leading: Icon(Icons.accessibility_rounded),
                     title: Text(
                       "Lupa Password",
-                      style: TextStyle(
-                          fontFamily: "NunitoSans",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700),
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                     ),
                     subtitle: Text(
                       "Silahkan koordinasi dengan helpdesk partner melalui telegram.",
-                      style: TextStyle(fontFamily: "NunitoSans", fontSize: 12),
+                      style: TextStyle(fontSize: 12),
                     ),
                     trailing: Icon(Icons.arrow_forward_rounded),
                     onTap: () {},
@@ -260,14 +242,12 @@ class _LoginPageState extends State<LoginPage> {
                     leading: Icon(Icons.call_rounded),
                     title: Text(
                       "Tidak bisa Masuk",
-                      style: TextStyle(
-                          fontFamily: "NunitoSans",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700),
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                     ),
                     subtitle: Text(
                       "Silahkan koordinasi dengan helpdesk partner melalui telegram.",
-                      style: TextStyle(fontFamily: "NunitoSans", fontSize: 12),
+                      style: TextStyle(fontSize: 12),
                     ),
                     trailing: Icon(Icons.arrow_forward_rounded),
                     onTap: () {},
@@ -281,14 +261,12 @@ class _LoginPageState extends State<LoginPage> {
                     leading: Icon(Icons.call_rounded),
                     title: Text(
                       "Akun Suspend",
-                      style: TextStyle(
-                          fontFamily: "NunitoSans",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700),
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                     ),
                     subtitle: Text(
                       "Silahkan koordinasi dengan helpdesk partner melalui telegram.",
-                      style: TextStyle(fontFamily: "NunitoSans", fontSize: 12),
+                      style: TextStyle(fontSize: 12),
                     ),
                     trailing: Icon(Icons.arrow_forward_rounded),
                     onTap: () {},
@@ -300,10 +278,7 @@ class _LoginPageState extends State<LoginPage> {
                 Center(
                   child: Text(
                     "myIndiHome Partner 5.0.0",
-                    style: TextStyle(
-                        fontFamily: "NunitoSans",
-                        fontSize: 12,
-                        fontWeight: FontWeight.w700),
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
                   ),
                 )
               ],
