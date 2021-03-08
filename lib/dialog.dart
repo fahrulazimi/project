@@ -121,7 +121,7 @@ class OnUpdateDialog extends StatelessWidget {
   }
 }
 
-class OnConfirmDialog extends StatelessWidget {
+class OnConfirmExitDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(

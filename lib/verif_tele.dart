@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project/dialog.dart';
 import 'package:project/layout.dart';
 import 'package:project/login_page.dart';
-import 'package:project/otp_form.dart';
+import 'package:project/otp_form_tele.dart';
 
 class VerifTelegram extends StatefulWidget {
   @override
@@ -182,7 +182,7 @@ class _VerifTelegramState extends State<VerifTelegram> {
                     //       return OnErrorTeleDialog();
                     //     });
                     Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => OTPForm()));
+                        MaterialPageRoute(builder: (context) => OTPFormTele()));
                   }),
               SizedBox(
                 height: 25,
