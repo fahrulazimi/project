@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
+  fdottedline: ^1.0.1
   flutter_pin_code_fields: ^1.1.0
   introduction_screen: ^1.0.9
 

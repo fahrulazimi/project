@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/dialog.dart';
+import 'package:project/layout.dart';
 
 class OTPTimeoutTele extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class OTPTimeoutTele extends StatefulWidget {
 class _OTPTimeoutTeleState extends State<OTPTimeoutTele> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -39,7 +41,8 @@ class _OTPTimeoutTeleState extends State<OTPTimeoutTele> {
             children: <Widget>[
               Image.asset(
                 "assets/images/intro2.png",
-                width: 120,
+                width: SizeConfig.blockHorizontal * 100,
+                height: SizeConfig.blockVertical * 30,
               ),
               Text("Waktu verifikasi telah habis",
                   textAlign: TextAlign.center,

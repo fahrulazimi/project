@@ -376,3 +376,89 @@ class OnSuksesDialog extends StatelessWidget {
     );
   }
 }
+
+class OnConfirmVerifAkun extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Container(
+        height: 280,
+        width: 300,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image.asset(
+              "assets/images/intro1.png",
+              width: 120,
+            ),
+            Text("Konfirmasi terlebih dahulu",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+                "Jika dalam 14 hari sejak kamu terdaftar tidak melakukan verifikasi, maka akun kamu akan disuspend. Apakah kamu yakin keluar halaman?",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 11,
+                )),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: 130,
+                  height: 40,
+                  child: FloatingActionButton.extended(
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Color(0xffC43D39)),
+                        borderRadius: BorderRadius.circular(25)),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    label: Padding(
+                      padding: EdgeInsets.all(50.0),
+                      child: Text(
+                        "KEMBALI",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xffC43D39),
+                            fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                    backgroundColor: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  width: 130,
+                  height: 40,
+                  child: FloatingActionButton.extended(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    label: Padding(
+                      padding: EdgeInsets.all(50.0),
+                      child: Text(
+                        "IYA, YAKIN",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                    backgroundColor: Color(0xffC43D39),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
