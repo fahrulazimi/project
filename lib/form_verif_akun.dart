@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:fdottedline/fdottedline.dart';
 import 'package:flutter/material.dart';
+import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:project/layout.dart';
 
@@ -13,23 +14,54 @@ class _FormAkunState extends State<FormAkun> {
   final formKey = GlobalKey<FormState>();
 
   File _imageKTP, _imageSelfie;
+  // bool _inProcess = false;
 
   final picker = ImagePicker();
 
   Future pickImageKTP() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final image = await picker.getImage(source: ImageSource.gallery);
+    if (image != null) {
+      File cropped = await ImageCropper.cropImage(
+          sourcePath: image.path,
+          aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
+          compressQuality: 100,
+          maxWidth: 700,
+          maxHeight: 700,
+          compressFormat: ImageCompressFormat.jpg,
+          androidUiSettings: AndroidUiSettings(
+            toolbarColor: Colors.red,
+            toolbarTitle: "Image Cropper Cropper",
+            statusBarColor: Colors.red.shade900,
+            backgroundColor: Colors.white,
+          ));
 
-    setState(() {
-      _imageKTP = File(pickedFile.path);
-    });
+      setState(() {
+        _imageKTP = cropped;
+      });
+    }
   }
 
   Future pickImageSelfie() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final image = await picker.getImage(source: ImageSource.gallery);
+    if (image != null) {
+      File cropped = await ImageCropper.cropImage(
+          sourcePath: image.path,
+          aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
+          compressQuality: 100,
+          maxWidth: 700,
+          maxHeight: 700,
+          compressFormat: ImageCompressFormat.jpg,
+          androidUiSettings: AndroidUiSettings(
+            toolbarColor: Colors.red,
+            toolbarTitle: "Image Cropper",
+            statusBarColor: Colors.red.shade900,
+            backgroundColor: Colors.white,
+          ));
 
-    setState(() {
-      _imageSelfie = File(pickedFile.path);
-    });
+      setState(() {
+        _imageSelfie = cropped;
+      });
+    }
   }
 
   var _nohpcontroller = TextEditingController();
@@ -188,12 +220,40 @@ class _FormAkunState extends State<FormAkun> {
                         border: Border.all(color: Colors.grey[200]),
                       ),
                       child: _imageKTP != null
-                          ? ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.file(
-                                _imageKTP,
-                                fit: BoxFit.cover,
-                              ),
+                          ? Stack(
+                              children: <Widget>[
+                                Container(
+                                  height: SizeConfig.blockVertical * 25,
+                                  width: SizeConfig.blockHorizontal * 100,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: FileImage(_imageKTP),
+                                          fit: BoxFit.cover)),
+                                ),
+                                Positioned(
+                                  bottom: 12,
+                                  right: 7,
+                                  child: GestureDetector(
+                                    onTap: pickImageKTP,
+                                    child: Container(
+                                      width: 110,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        color: Colors.red,
+                                      ),
+                                      child: Center(
+                                          child: Text(
+                                        "ULANGI FOTO?",
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w900),
+                                      )),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             )
                           : Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -256,12 +316,40 @@ class _FormAkunState extends State<FormAkun> {
                         border: Border.all(color: Colors.grey[200]),
                       ),
                       child: _imageSelfie != null
-                          ? ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.file(
-                                _imageSelfie,
-                                fit: BoxFit.cover,
-                              ),
+                          ? Stack(
+                              children: <Widget>[
+                                Container(
+                                  height: SizeConfig.blockVertical * 25,
+                                  width: SizeConfig.blockHorizontal * 100,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: FileImage(_imageSelfie),
+                                          fit: BoxFit.cover)),
+                                ),
+                                Positioned(
+                                  bottom: 12,
+                                  right: 7,
+                                  child: GestureDetector(
+                                    onTap: pickImageSelfie,
+                                    child: Container(
+                                      width: 110,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        color: Colors.red,
+                                      ),
+                                      child: Center(
+                                          child: Text(
+                                        "ULANGI FOTO?",
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w900),
+                                      )),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             )
                           : Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -314,18 +402,22 @@ class _FormAkunState extends State<FormAkun> {
                     ],
                   ),
                   SizedBox(height: 10),
-                  Container(
-                    height: SizeConfig.blockVertical * 25,
-                    width: SizeConfig.blockHorizontal * 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.grey[200]),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Ketuk disini untuk memulai Tanda Tangan Digital",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 11, color: Colors.grey[400]),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      height: SizeConfig.blockVertical * 25,
+                      width: SizeConfig.blockHorizontal * 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Colors.grey[200]),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Ketuk disini untuk memulai Tanda Tangan Digital",
+                          textAlign: TextAlign.center,
+                          style:
+                              TextStyle(fontSize: 11, color: Colors.grey[400]),
+                        ),
                       ),
                     ),
                   ),

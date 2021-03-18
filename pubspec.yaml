@@ -25,9 +25,11 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.0
   fdottedline: ^1.0.1
-  image_picker: ^0.6.7+14
+  image_cropper: ^1.2.0
+  image_picker: ^0.7.3
   flutter_pin_code_fields: ^1.1.0
   introduction_screen: ^1.0.9
+  syncfusion_flutter_signaturepad: ^18.4.48-beta
 
 dev_dependencies:
   flutter_test:
