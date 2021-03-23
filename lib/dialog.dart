@@ -462,3 +462,128 @@ class OnConfirmVerifAkun extends StatelessWidget {
     );
   }
 }
+
+class OnErrorOTPAkunDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Container(
+        height: 280,
+        width: 300,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image.asset(
+              "assets/images/intro3.png",
+              width: 120,
+            ),
+            Text("Terjadi kegagalan dalam proses \n verifikasi OTP.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                )),
+            SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: 130,
+                  height: 40,
+                  child: FloatingActionButton.extended(
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Color(0xffC43D39)),
+                        borderRadius: BorderRadius.circular(25)),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    label: Padding(
+                      padding: EdgeInsets.all(50.0),
+                      child: Text(
+                        "BANTUAN",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xffC43D39),
+                            fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                    backgroundColor: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  width: 130,
+                  height: 40,
+                  child: FloatingActionButton.extended(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    label: Padding(
+                      padding: EdgeInsets.all(50.0),
+                      child: Text(
+                        "KIRIM ULANG",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                    backgroundColor: Color(0xffC43D39),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class OnSuksesAkunDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Container(
+        height: 250,
+        width: 300,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image.asset(
+              "assets/images/intro2.png",
+              width: 120,
+            ),
+            Text(
+                "Terima kasih telah berhasil mengirimkan data verifikasi, mohon menunggu proses verifikasi data oleh agent kami..",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                )),
+            SizedBox(
+              height: 25,
+            ),
+            FloatingActionButton.extended(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              label: Padding(
+                padding: EdgeInsets.all(50.0),
+                child: Text(
+                  "OKE SIAP",
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900),
+                ),
+              ),
+              backgroundColor: Color(0xffC43D39),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
