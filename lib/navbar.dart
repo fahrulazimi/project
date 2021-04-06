@@ -21,7 +21,7 @@ class NavBar extends StatelessWidget {
                   alignment: Alignment(0, -0.5),
                   child: Icon(
                     Icons.home_filled,
-                    color: Colors.grey[400],
+                    color: Color(0xffC43D39),
                     size: SizeConfig.blockHorizontal * 7.5,
                   ),
                 ),
@@ -31,7 +31,7 @@ class NavBar extends StatelessWidget {
                     "Beranda",
                     style: TextStyle(
                         fontSize: 12,
-                        color: Colors.grey[400],
+                        color: Color(0xffC43D39),
                         fontWeight: FontWeight.w700),
                   ),
                 )
