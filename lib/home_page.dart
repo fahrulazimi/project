@@ -108,9 +108,12 @@ class _HomeState extends State<Home> {
                                     fontSize: 14, fontWeight: FontWeight.w700),
                               ),
                               Spacer(),
-                              Icon(
-                                Icons.arrow_forward_rounded,
-                                color: Color(0xffC43D39),
+                              InkWell(
+                                onTap: () => _onButtonTarget(),
+                                child: Icon(
+                                  Icons.arrow_forward_rounded,
+                                  color: Color(0xffC43D39),
+                                ),
                               ),
                             ],
                           ),
@@ -366,7 +369,7 @@ class _HomeState extends State<Home> {
                               alignment: Alignment(0, -0.5),
                               child: InkWell(
                                 child: Icon(Icons.app_registration, size: 30),
-                                onTap: () {},
+                                onTap: () => _onButtonRegistrasi(),
                               ),
                             ),
                             Align(
@@ -390,7 +393,7 @@ class _HomeState extends State<Home> {
                               child: InkWell(
                                 child:
                                     Icon(Icons.text_snippet_rounded, size: 30),
-                                onTap: () {},
+                                onTap: () => _onButtonMonitoring(),
                               ),
                             ),
                             Align(
@@ -1281,5 +1284,462 @@ class _HomeState extends State<Home> {
         );
       },
     );
+  }
+
+  void _onButtonTarget() {
+    showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+        ),
+        context: context,
+        builder: (context) {
+          return Wrap(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Center(
+                      child: Container(
+                        width: 80,
+                        height: 5,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.grey),
+                      ),
+                    ),
+                    SizedBox(height: 25),
+                    Text(
+                      "Targetkan pendapatan secara maksimal.",
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Color(0xffC43D39),
+                          fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(height: 15),
+                    Card(
+                      child: ListTile(
+                        leading: Icon(Icons.chat_rounded),
+                        title: Text(
+                          "Ubah target pendapatan PSB",
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w700),
+                        ),
+                        subtitle: Text(
+                          "Rp 5.000.000,-",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xffC43D39),
+                          ),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_rounded,
+                          color: Color(0xffC43D39),
+                        ),
+                        onTap: () {},
+                      ),
+                    ),
+                    SizedBox(height: 15),
+                    Card(
+                      child: ListTile(
+                        leading: Icon(Icons.error_outline_rounded),
+                        title: Text(
+                          "Ubah target pendapatan Add-on",
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w700),
+                        ),
+                        subtitle: Text(
+                          "Rp 5.000.000,-",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xffC43D39),
+                          ),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_rounded,
+                          color: Color(0xffC43D39),
+                        ),
+                        onTap: () {},
+                      ),
+                    ),
+                    SizedBox(height: 25),
+                  ],
+                ),
+              ),
+            ],
+          );
+        });
+  }
+
+  void _onButtonRegistrasi() {
+    showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+        ),
+        context: context,
+        builder: (context) {
+          return Wrap(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Center(
+                      child: Container(
+                        width: 80,
+                        height: 5,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.grey),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      "Registrasi",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Color(0xffC43D39),
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Container(
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child: Icon(Icons.home_rounded, size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Indihome",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child: Icon(Icons.shopping_cart_rounded,
+                                      size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Add-on",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child:
+                                      Icon(Icons.access_time_rounded, size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Orbit",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child: Icon(Icons.grid_view, size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Halo",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(left: 15),
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child: Icon(Icons.wifi_rounded, size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "WMS",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 15),
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child: Icon(Icons.blur_circular_rounded,
+                                      size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Offline",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 15),
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child: Icon(Icons.note_add_rounded, size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Prospek",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 15)
+                  ],
+                ),
+              ),
+            ],
+          );
+        });
+  }
+
+  void _onButtonMonitoring() {
+    showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+        ),
+        context: context,
+        builder: (context) {
+          return Wrap(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Center(
+                      child: Container(
+                        width: 80,
+                        height: 5,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.grey),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      "Monitoring",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Color(0xffC43D39),
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Container(
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child: Icon(Icons.note_rounded, size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Order PSB",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child: Icon(Icons.shopping_cart_rounded,
+                                      size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Add-on",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child:
+                                      Icon(Icons.access_time_rounded, size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Orbit",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: SizeConfig.blockVertical * 10,
+                          width: SizeConfig.blockHorizontal * 18,
+                          child: Stack(
+                            children: <Widget>[
+                              Align(
+                                alignment: Alignment(0, -0.5),
+                                child: InkWell(
+                                  child: Icon(Icons.track_changes_rounded,
+                                      size: 30),
+                                  onTap: () {},
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 1),
+                                child: Text(
+                                  "Retargeting",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 15)
+                  ],
+                ),
+              ),
+            ],
+          );
+        });
   }
 }
