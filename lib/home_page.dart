@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project/navbar.dart';
+import 'package:project/dialog.dart';
+import 'package:project/inbox_page.dart';
+import 'package:project/knowledge_page.dart';
 import 'package:project/layout.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -9,6 +11,25 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _selectedIndex = 0;
+
+  void _onItemTap(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    if (index == 0) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Home()));
+    } else if (index == 1) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Knowledge()));
+    } else if (index == 2) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Inbox()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -34,7 +55,7 @@ class _HomeState extends State<Home> {
             Container(
               padding: EdgeInsets.all(13),
               color: Colors.white,
-              height: SizeConfig.blockVertical * 70,
+              height: SizeConfig.blockVertical * 68,
               width: SizeConfig.screenWidth,
               child: Column(
                 children: <Widget>[
@@ -368,7 +389,10 @@ class _HomeState extends State<Home> {
                             Align(
                               alignment: Alignment(0, -0.5),
                               child: InkWell(
-                                child: Icon(Icons.app_registration, size: 30),
+                                child: Icon(
+                                  Icons.app_registration,
+                                  size: 30,
+                                ),
                                 onTap: () => _onButtonRegistrasi(),
                               ),
                             ),
@@ -550,7 +574,24 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      bottomNavigationBar: NavBar(),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_filled), label: 'Beranda'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.people_outline_rounded), label: 'Knowledge'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.email_rounded), label: 'Inbox'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline_rounded), label: 'Profil'),
+        ],
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Color(0xffC43D39),
+        unselectedItemColor: Colors.grey[400],
+        onTap: _onItemTap,
+        elevation: 5,
+      ),
     );
   }
 
@@ -599,7 +640,7 @@ class _HomeState extends State<Home> {
                               height: 7,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
-                                  color: Colors.grey),
+                                  color: Color(0xffC4C4C4)),
                             ),
                           ),
                           SizedBox(height: 10),
@@ -752,7 +793,7 @@ class _HomeState extends State<Home> {
                                     Align(
                                       alignment: Alignment(0, -0.5),
                                       child: InkWell(
-                                        child: Icon(Icons.blur_circular_rounded,
+                                        child: Icon(Icons.language_rounded,
                                             size: 30),
                                         onTap: () {},
                                       ),
@@ -1307,7 +1348,7 @@ class _HomeState extends State<Home> {
                         height: 5,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Colors.grey),
+                            color: Color(0xffC4C4C4)),
                       ),
                     ),
                     SizedBox(height: 25),
@@ -1338,7 +1379,13 @@ class _HomeState extends State<Home> {
                           Icons.arrow_forward_rounded,
                           color: Color(0xffC43D39),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return EditTargetPSB();
+                              });
+                        },
                       ),
                     ),
                     SizedBox(height: 15),
@@ -1361,7 +1408,13 @@ class _HomeState extends State<Home> {
                           Icons.arrow_forward_rounded,
                           color: Color(0xffC43D39),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return EditTargetAddon();
+                              });
+                        },
                       ),
                     ),
                     SizedBox(height: 25),
@@ -1394,7 +1447,7 @@ class _HomeState extends State<Home> {
                         height: 5,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Colors.grey),
+                            color: Color(0xffC4C4C4)),
                       ),
                     ),
                     SizedBox(height: 20),
@@ -1545,8 +1598,7 @@ class _HomeState extends State<Home> {
                               Align(
                                 alignment: Alignment(0, -0.5),
                                 child: InkWell(
-                                  child: Icon(Icons.blur_circular_rounded,
-                                      size: 30),
+                                  child: Icon(Icons.language_rounded, size: 30),
                                   onTap: () {},
                                 ),
                               ),
@@ -1619,7 +1671,7 @@ class _HomeState extends State<Home> {
                         height: 5,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Colors.grey),
+                            color: Color(0xffC4C4C4)),
                       ),
                     ),
                     SizedBox(height: 20),
@@ -1734,7 +1786,7 @@ class _HomeState extends State<Home> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 15)
+                    SizedBox(height: 10)
                   ],
                 ),
               ),

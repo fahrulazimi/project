@@ -587,3 +587,161 @@ class OnSuksesAkunDialog extends StatelessWidget {
     );
   }
 }
+
+class EditTargetPSB extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Container(
+        height: 150,
+        width: 300,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              "Target pendapatan PSB",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 10),
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey[100]),
+              ),
+              child: TextFormField(
+                  decoration: InputDecoration(border: InputBorder.none)),
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: 130,
+                  height: 40,
+                  child: FloatingActionButton.extended(
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Color(0xffC43D39)),
+                        borderRadius: BorderRadius.circular(25)),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    label: Padding(
+                      padding: EdgeInsets.all(50.0),
+                      child: Text(
+                        "Kembali",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xffC43D39),
+                            fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                    backgroundColor: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  width: 130,
+                  height: 40,
+                  child: FloatingActionButton.extended(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    label: Padding(
+                      padding: EdgeInsets.all(50.0),
+                      child: Text(
+                        "SIMPAN",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                    backgroundColor: Color(0xffC43D39),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class EditTargetAddon extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Container(
+        height: 150,
+        width: 300,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              "Target pendapatan Add-on",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 10),
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey[100]),
+              ),
+              child: TextFormField(
+                  decoration: InputDecoration(border: InputBorder.none)),
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: 130,
+                  height: 40,
+                  child: FloatingActionButton.extended(
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Color(0xffC43D39)),
+                        borderRadius: BorderRadius.circular(25)),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    label: Padding(
+                      padding: EdgeInsets.all(50.0),
+                      child: Text(
+                        "Kembali",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xffC43D39),
+                            fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                    backgroundColor: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  width: 130,
+                  height: 40,
+                  child: FloatingActionButton.extended(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    label: Padding(
+                      padding: EdgeInsets.all(50.0),
+                      child: Text(
+                        "SIMPAN",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                    backgroundColor: Color(0xffC43D39),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
