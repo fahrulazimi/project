@@ -3,6 +3,7 @@ import 'package:project/dialog.dart';
 import 'package:project/inbox_page.dart';
 import 'package:project/knowledge_page.dart';
 import 'package:project/layout.dart';
+import 'package:project/profile_page.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class Home extends StatefulWidget {
@@ -27,6 +28,9 @@ class _HomeState extends State<Home> {
     } else if (index == 2) {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Inbox()));
+    } else if (index == 3) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Profile()));
     }
   }
 

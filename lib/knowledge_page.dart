@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/home_page.dart';
 import 'package:project/inbox_page.dart';
+import 'package:project/profile_page.dart';
 
 class Knowledge extends StatefulWidget {
   @override
@@ -24,6 +25,9 @@ class _KnowledgeState extends State<Knowledge> {
     } else if (index == 2) {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Inbox()));
+    } else if (index == 3) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Profile()));
     }
   }
 

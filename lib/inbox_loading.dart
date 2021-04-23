@@ -3,6 +3,7 @@ import 'package:project/home_page.dart';
 import 'package:project/inbox_page.dart';
 import 'package:project/knowledge_page.dart';
 import 'package:project/layout.dart';
+import 'package:project/profile_page.dart';
 
 class InboxLoading extends StatefulWidget {
   @override
@@ -26,6 +27,9 @@ class _InboxLoadingState extends State<InboxLoading> {
     } else if (index == 2) {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Inbox()));
+    } else if (index == 3) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Profile()));
     }
   }
 
