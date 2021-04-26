@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project/dialog.dart';
-import 'package:project/inbox_page.dart';
-import 'package:project/knowledge_page.dart';
-import 'package:project/layout.dart';
-import 'package:project/profile_page.dart';
+import 'package:project/helper/layout.dart';
+import 'package:project/pages/dialog/dialog.dart';
+import 'package:project/pages/inbox/inbox_page.dart';
+import 'package:project/pages/knowledge/knowledge_page.dart';
+import 'package:project/pages/profile_page/profile_page.dart';
+
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class Home extends StatefulWidget {

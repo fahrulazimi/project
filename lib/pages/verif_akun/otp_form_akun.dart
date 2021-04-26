@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
-import 'package:project/dialog.dart';
-import 'package:project/otp_timeout_akun.dart';
+import 'package:project/pages/dialog/dialog.dart';
+import 'package:project/pages/verif_akun/otp_timeout_akun.dart';
 
 class OTPFormAkun extends StatefulWidget {
   @override

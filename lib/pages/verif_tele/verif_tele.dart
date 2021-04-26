@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project/dialog.dart';
-import 'package:project/layout.dart';
-import 'package:project/login_page.dart';
-import 'package:project/otp_form_tele.dart';
+import 'package:project/helper/layout.dart';
+import 'package:project/pages/login/login_page.dart';
+
+import 'otp_form_tele.dart';
 
 class VerifTelegram extends StatefulWidget {
   @override

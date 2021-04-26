@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project/dialog.dart';
+import 'package:project/pages/dialog/dialog.dart';
 
 class OTPAkunTimeOut extends StatefulWidget {
   @override

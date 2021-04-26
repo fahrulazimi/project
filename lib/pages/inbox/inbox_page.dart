@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project/home_page.dart';
-import 'package:project/knowledge_page.dart';
-import 'package:project/layout.dart';
-import 'package:project/profile_page.dart';
+import 'package:project/helper/layout.dart';
+import 'package:project/pages/home/home_page.dart';
+import 'package:project/pages/knowledge/knowledge_page.dart';
+import 'package:project/pages/profile_page/profile_page.dart';
 
 class Inbox extends StatefulWidget {
   @override

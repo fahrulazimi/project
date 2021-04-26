@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/inbox_page.dart';
-import 'package:project/layout.dart';
+import 'package:project/helper/layout.dart';
+import 'package:project/pages/inbox/inbox_page.dart';
 
 class DetailInboxUpload extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/dialog.dart';
-import 'package:project/layout.dart';
+import 'package:project/helper/layout.dart';
+import 'package:project/pages/dialog/dialog.dart';
 
 class VerifAkun extends StatefulWidget {
   @override

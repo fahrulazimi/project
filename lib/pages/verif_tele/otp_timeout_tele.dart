@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
-import 'package:project/dialog.dart';
-import 'package:project/layout.dart';
-import 'package:project/verif_tele.dart';
+import 'package:project/helper/layout.dart';
+import 'package:project/pages/dialog/dialog.dart';
 
-class OTPFormTele extends StatefulWidget {
+class OTPTimeoutTele extends StatefulWidget {
   @override
-  _OTPFormTeleState createState() => _OTPFormTeleState();
+  _OTPTimeoutTeleState createState() => _OTPTimeoutTeleState();
 }
 
-class _OTPFormTeleState extends State<OTPFormTele> {
+class _OTPTimeoutTeleState extends State<OTPTimeoutTele> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -26,8 +24,6 @@ class _OTPFormTeleState extends State<OTPFormTele> {
                 builder: (BuildContext context) {
                   return OnConfirmExitDialog();
                 });
-            // Navigator.push(context,
-            //     MaterialPageRoute(builder: (context) => VerifTelegram()));
           },
         ),
         title: Text("Verifikasi Telegram",
@@ -48,43 +44,9 @@ class _OTPFormTeleState extends State<OTPFormTele> {
                 width: SizeConfig.blockHorizontal * 100,
                 height: SizeConfig.blockVertical * 30,
               ),
-              Text(
-                  "Harap ketikan kode verifikasi yang dikirim ke akun telegram kamu.",
+              Text("Waktu verifikasi telah habis",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 30, right: 30),
-                child: PinCodeFields(
-                  // autofocus: true,
-                  autoHideKeyboard: false,
-                  length: 4,
-                  activeBorderColor: Colors.red,
-                  keyboardType: TextInputType.number,
-                  textStyle: TextStyle(fontSize: 36),
-                  onComplete: (output) {
-                    print(output);
-                  },
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text("Verifikasi dalam waktu "),
-                  TweenAnimationBuilder(
-                      tween: Tween(begin: 120.0, end: 0),
-                      duration: Duration(seconds: 120),
-                      builder: (context, value, child) => Text(
-                            "${value.toInt()}",
-                            style: TextStyle(color: Colors.red),
-                          )),
-                ],
-              ),
               SizedBox(
                 height: 15,
               ),
@@ -97,16 +59,18 @@ class _OTPFormTeleState extends State<OTPFormTele> {
                     ),
                     child: Center(
                         child: Text(
-                      "VERIFIKASI OTP",
+                      "KIRIM ULANG OTP",
                       style: TextStyle(fontSize: 14, color: Colors.white),
                     )),
                   ),
                   onTap: () {
-                    //   showDialog(
-                    //       context: context,
-                    //       builder: (BuildContext context) {
-                    //         return OnErrorTeleDialog();
-                    //       });
+                    // showDialog(
+                    //     context: context,
+                    //     builder: (BuildContext context) {
+                    //       return OnLoadingDialog();
+                    //     });
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => OTPTimeOut()));
                   }),
               SizedBox(
                 height: 15,

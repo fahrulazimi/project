@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project/home_page.dart';
-import 'package:project/inbox_page.dart';
-import 'package:project/profile_page.dart';
+import 'package:project/pages/home/home_page.dart';
+import 'package:project/pages/inbox/inbox_page.dart';
+import 'package:project/pages/profile_page/profile_page.dart';
 
 class Knowledge extends StatefulWidget {
   @override

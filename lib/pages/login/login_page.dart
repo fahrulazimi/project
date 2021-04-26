@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project/layout.dart';
-import 'package:project/dialog.dart';
-import 'package:project/verif_tele.dart';
+import 'package:project/helper/layout.dart';
+import 'package:project/pages/verif_tele/verif_tele.dart';
 
 class LoginPage extends StatefulWidget {
   @override
